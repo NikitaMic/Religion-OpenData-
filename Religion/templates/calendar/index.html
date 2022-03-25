@@ -1,0 +1,43 @@
+{% extends "calendar/layout.html" %}
+{% load static %}
+{% block body %}
+<h1>How many religious adherents</h1>
+
+<div id="wrapper">
+    <select name="year" id="year-select">
+        <option value="">--Please choose a Year--</option>
+        <option>1945</option>
+        <option>1950</option>
+        <option>1955</option>
+        <option>1960</option>
+        <option>1965</option>
+        <option>1970</option>
+        <option>1975</option>
+        <option>1980</option>
+        <option>1985</option>
+        <option>1990</option>
+        <option>1995</option>
+        <option>2000</option>
+        <option>2005</option>
+        <option>2010</option>
+    </select>
+    <select name="region" id="region-select">
+        <option value="">--Please choose a Region--</option>
+        <option>Africa</option>
+        <option>Asia</option>
+        <option>Western Hemisphere</option>
+        <option>Middle East</option>
+        <option>Europe</option>
+    </select>
+    <select name="region" id="religion-select">
+        <option value="">--Please choose a Religion--</option>
+        <option>Africa</option>
+        <option>Asia</option>
+        <option>Western Hemisphere</option>
+        <option>Middle East</option>
+        <option>Europe</option>
+    </select>
+</div>
+<div id="submit">Submit</div>
+<div id="result"></div>
+{% endblock %}
