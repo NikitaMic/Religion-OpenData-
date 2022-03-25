@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Calendar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Religion/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'calendarproject/templates')],
 
         'APP_DIRS': True,
         'OPTIONS': {
@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    'Religion/static',
+    'calendarproject/static',
 )
 
 # Default primary key field type
