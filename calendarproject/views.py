@@ -13,7 +13,7 @@ def index(request):
 
 @csrf_exempt
 def africa(request):
-    loc = "calendarproject/data/newdata.xls"
+    loc = "calendarproject/data/final data.xls"
     data = json.loads(request.body)
 
     year = data.get("year")
