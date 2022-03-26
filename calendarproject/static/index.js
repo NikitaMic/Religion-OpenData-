@@ -17,13 +17,21 @@ async function search(){
     })})
         .then(re => re.json())
         .then(resp => {
-        if (region === "West. Hem") {
+        if (region === "West. Hem" && religion !== "People on Earth") {
             region = "The Western Hemisphere"
+            document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " \n " + religion + " in " + region
             }
-        else if (region === "Mideast"){
+        else if (region === "Mideast" && religion !== "People on Earth"){
             region = "The Middle East"
-            }
-        document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " \n " + religion + " in " + region
+            document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " \n " + religion + " in " + region
+        }
+        else if (religion === "People on Earth"){
+            region = "People on Earth"
+            document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " \n " + region
+        }
+        else {
+            document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " \n " + religion + " in " + region
+        }
 
         })}
 }
