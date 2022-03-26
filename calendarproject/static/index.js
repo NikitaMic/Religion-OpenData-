@@ -1,21 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const submit = document.querySelector("#submit")
-    submit.addEventListener("click", search)
+    const wrapper = document.querySelector("#wrapper")
+    wrapper.addEventListener("change", search)
 })
 
 async function search(){
-    const year = document.querySelector("#year-select").value
-    const region = document.querySelector("#region-select").value
-    const religion = document.querySelector("#religion-select").value
+    let region = document.querySelector("#region-select").value
+    let year = document.querySelector("#year-select").value
+    let religion = document.querySelector("#religion-select").value
+    if (religion && year && region !== undefined){
     fetch("africa", {
         method: "POST",
         body: JSON.stringify({
         year: year,
         region: region,
-        religion: "Christian"
+        religion: religion
     })})
         .then(re => re.json())
         .then(resp => {
-        document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " Christians in " + region
-        })
+        if (region === "West. Hem") {
+            region = "The Western Hemisphere"
+            }
+        else if (region === "Mideast"){
+            region = "The Middle East"
+            }
+        document.querySelector("#result").innerText = "In " + year + " there were " + resp.data + " \n " + religion + " in " + region
+
+        })}
 }

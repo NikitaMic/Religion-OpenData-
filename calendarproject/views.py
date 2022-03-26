@@ -22,16 +22,25 @@ def africa(request):
     # To open Workbook
     wb = xlrd.open_workbook(loc)
     sheet = wb.sheet_by_index(0)
-    africa1945christ = []
     summe = 0
-    # For row 0 and column 0
+    if religion == "Christians":
+        colA = 2
+        colB = 8
+    elif religion == "Jews":
+        colA = 9
+        colB = 13
+    elif religion == "Muslims":
+        colA = 14
+        colB = 21
+    elif religion == "Buddhists":
+        colA = 22
+        colB = 25
     for a in range(sheet.nrows):
         if sheet.cell_value(a, 0) == int(year):
             if sheet.cell_value(a, 1) == region:
-                val = sheet.row_values(a, 2, 8)
+                val = sheet.row_values(a, colA, colB)
                 summe = 0
                 for i in range(0, len(val)):
-                    summe = summe + float(val[i])
-                africa1945christ.append(summe)
+                    summe = summe + int(val[i])
 
-    return JsonResponse({"data": africa1945christ})
+    return JsonResponse({"data": f"{summe:,}"})
