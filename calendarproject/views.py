@@ -24,16 +24,16 @@ def africa(request):
     sheet = wb.sheet_by_index(0)
     summe = 0
     if religion == "Christians":
-        colA = 2
+        colA = 7
         colB = 8
     elif religion == "Jews":
-        colA = 9
+        colA = 12
         colB = 13
     elif religion == "Muslims":
-        colA = 14
+        colA = 20
         colB = 21
     elif religion == "Buddhists":
-        colA = 22
+        colA = 24
         colB = 25
     elif religion == "Hindus":
         colA = 26
