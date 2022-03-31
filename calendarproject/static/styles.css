@@ -45,8 +45,18 @@ select {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
+        width: 80vw;
+        align-items: center;
     }
     select {
         margin: 0.5rem;
+        width: 100%;
+        height: 10vh;
+        border-radius: 50px;
     }
+
+    h1, select, #result {
+        font-size: 4rem;
+    }
+
 }
