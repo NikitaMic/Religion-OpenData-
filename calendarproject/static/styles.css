@@ -39,3 +39,14 @@ select {
     text-align: center;
     font-size: 3rem;
 }
+
+@media screen and (max-width: 980px) {
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    select {
+        margin: 0.5rem;
+    }
+}
